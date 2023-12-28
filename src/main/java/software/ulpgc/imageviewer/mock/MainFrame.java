@@ -12,7 +12,7 @@ public class MainFrame extends JFrame {
 
     public MainFrame() {
         this.setTitle("Image Viewer");
-        this.setSize(800, 600);
+        this.setSize(1920, 1080);
         this.setLocationRelativeTo(null);
         this.setDefaultCloseOperation(EXIT_ON_CLOSE);
         this.add(createImageDisplay());
@@ -22,5 +22,9 @@ public class MainFrame extends JFrame {
         SwingImageDisplay display = new SwingImageDisplay();
         this.imageDisplay = display;
         return display;
+    }
+
+    public ImageDisplay getImageDisplay() {
+        return this.imageDisplay;
     }
 }

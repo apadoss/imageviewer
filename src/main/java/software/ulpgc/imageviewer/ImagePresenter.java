@@ -21,11 +21,11 @@ public class ImagePresenter {
 
     private void released(int offset) {
         if (Math.abs(offset) >= 0.5 * display.getWidth())
-            image = offset > 0 ? image.next() : image.previous();
+            image = offset > 0 ? image.previous() : image.next();
         repaint();
     }
 
-    private void show(Image image) {
+    public void show(Image image) {
         this.image = image;
         repaint();
     }
