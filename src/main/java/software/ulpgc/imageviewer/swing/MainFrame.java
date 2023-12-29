@@ -1,4 +1,4 @@
-package software.ulpgc.imageviewer.mock;
+package software.ulpgc.imageviewer.swing;
 
 import software.ulpgc.imageviewer.ImageDisplay;
 import software.ulpgc.imageviewer.swing.SwingImageDisplay;

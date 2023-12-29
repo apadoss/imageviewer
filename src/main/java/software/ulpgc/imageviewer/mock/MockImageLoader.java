@@ -4,7 +4,7 @@ import software.ulpgc.imageviewer.Image;
 import software.ulpgc.imageviewer.ImageLoader;
 
 public class MockImageLoader implements ImageLoader {
-    private String[] ids = new String[] {"cyan", "magenta", "yellow", "red", "green", "blue"};
+    private final String[] ids = new String[] {"cyan", "magenta", "yellow", "red", "green", "blue"};
 
     @Override
     public Image load() {
