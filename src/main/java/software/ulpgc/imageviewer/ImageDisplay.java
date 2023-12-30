@@ -1,9 +1,11 @@
 package software.ulpgc.imageviewer;
 
 public interface ImageDisplay {
-    void paint(String id, int offset);
+    void show(Image image, int offset);
+    Image image();
     int getWidth();
     void clear();
     void on(Shift shift);
     void on(Released released);
+    void on(Pressed pressed);
 }

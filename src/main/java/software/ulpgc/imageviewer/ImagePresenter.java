@@ -4,19 +4,24 @@ public class ImagePresenter {
     private final ImageDisplay display;
     private Image image;
 
-    public ImagePresenter(ImageDisplay display) {
+    public ImagePresenter(Image image, ImageDisplay display) {
         this.display = display;
+        this.image = image;
         this.display.on((Shift) this::shift);
         this.display.on((Released) this::released);
+        this.display.on((Pressed) this::pressed);
+        this.display.clear();
     }
+
+    private void pressed(int offset) {this.image = this.display.image();}
 
     private void shift(int offset) {
         display.clear();
-        display.paint(image.id(), offset);
+        display.show(image, offset);
         if (offset > 0)
-            display.paint(image.previous().id(), offset - display.getWidth());
+            display.show(image.previous(), offset - display.getWidth());
         else
-            display.paint(image.next().id(), offset + display.getWidth());
+            display.show(image.next(), offset + display.getWidth());
     }
 
     private void released(int offset) {
@@ -25,13 +30,12 @@ public class ImagePresenter {
         repaint();
     }
 
-    public void show(Image image) {
-        this.image = image;
+    public void show() {
         repaint();
     }
 
     private void repaint() {
         display.clear();
-        display.paint(image.id(), 0);
+        display.show(image, 0);
     }
 }
