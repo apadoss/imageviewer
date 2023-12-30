@@ -3,7 +3,6 @@ package software.ulpgc.imageviewer.swing;
 import software.ulpgc.imageviewer.FileImageLoader;
 import software.ulpgc.imageviewer.Image;
 import software.ulpgc.imageviewer.ImagePresenter;
-import software.ulpgc.imageviewer.mock.MockImageLoader;
 
 import java.io.File;
 
